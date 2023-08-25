@@ -90,6 +90,11 @@ spec:
         defaultBranch: main
         protectDefaultBranch: false
         repoVisibility: public    
+    - id: wait
+      name: Waiting for 2 Seconds for API availability
+      action: 'debug:wait'
+      input:
+        seconds: 2
     - id: registerSource
       name: Registering the Source Code Component
       action: catalog:register

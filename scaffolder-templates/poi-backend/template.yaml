@@ -89,7 +89,12 @@ spec:
         repoUrl: github.com?owner=${{parameters.githubOrg}}&repo=${{parameters.namespace}}-backend
         defaultBranch: main
         protectDefaultBranch: false
-        repoVisibility: public    
+        repoVisibility: public 
+    - id: wait
+      name: Waiting for 2 Seconds for API availability
+      action: 'debug:wait'
+      input:
+        seconds: 2
     - id: registerSource
       name: Registering the Source Code Component
       action: catalog:register
